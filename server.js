@@ -38,8 +38,8 @@ const cp={
 }
 
 mongoClient.connect(url,cp,function(err,name){
-	console.log(dotenv.env.MONGODB_URI);
-	console.log(process.env.MONGODB_URI);
+//	console.log(dotenv.env.MONGODB_URI);
+//	console.log(process.env.MONGODB_URI);
 	console.log(name);
 	var database = name.db('gowsi')
 	console.log("Database connected.");
