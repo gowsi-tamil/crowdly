@@ -3,6 +3,7 @@ var app = express();
 var mongoose = require("mongoose");
 var formidable = require("express-formidable");
 app.use(formidable());
+import dotenv from "dotenv";
 
 var mongodb = require("mongodb");
 var mongoClient = mongodb.MongoClient;
@@ -36,7 +37,8 @@ const cp={
 	useUnifiedTopology:true
 }
 
-mongoClient.connect(process.env.MONGODB_URI,cp,function(err,name){
+mongoClient.connect(process.env.url,cp,function(err,name){
+	console.log(name);
 	var database = name.db('gowsi')
 	console.log("Database connected.");
 
