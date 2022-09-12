@@ -21,7 +21,7 @@ app.set("view engine", "ejs");
 var socketIO = require("socket.io")(http);
 var socketID = "";
 var users = [];
-const port =process.env.PORT || 3000
+const port =process.env.MONGODB_URI || 3000
 
 //var mainURL = "http://localhost:3000";
 var mainURL = "http://localhost:"+port;
