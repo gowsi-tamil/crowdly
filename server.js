@@ -36,7 +36,7 @@ const cp={
 	useUnifiedTopology:true
 }
 
-mongoClient.connect(process.env.url,cp,function(err,name){
+mongoClient.connect(url,cp,function(err,name){
 	console.log(name);
 	var database = name.db('gowsi')
 	console.log("Database connected.");
