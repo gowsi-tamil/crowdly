@@ -2,6 +2,7 @@ var express = require("express");
 var app = express();
 var mongoose = require("mongoose");
 var formidable = require("express-formidable");
+const dotenv = require('dotenv');
 app.use(formidable());
 
 var mongodb = require("mongodb");
@@ -30,13 +31,15 @@ socketIO.on("connection", function (socket) {
 	socketID = socket.id;
 });
 //"mongodb://localhost:27017"
-var url = "mongodb+srv://gowsi:tamilselvan@cluster0.plrul.mongodb.net/gowsi?retryWrites=true&w=majority";
+var url = "mongodb+srv://gowsi:tamilselvan@cluster0.plrul.mongodb.net/gowsi";
 const cp={
 	useNewUrlParser:true,
 	useUnifiedTopology:true
 }
 
 mongoClient.connect(url,cp,function(err,name){
+	console.log(dotenv.env.MONGODB_URI);
+	console.log(process.env.MONGODB_URI);
 	console.log(name);
 	var database = name.db('gowsi')
 	console.log("Database connected.");
