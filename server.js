@@ -3,7 +3,6 @@ var app = express();
 var mongoose = require("mongoose");
 var formidable = require("express-formidable");
 app.use(formidable());
-import dotenv from "dotenv";
 
 var mongodb = require("mongodb");
 var mongoClient = mongodb.MongoClient;
