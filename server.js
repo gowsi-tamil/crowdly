@@ -21,7 +21,7 @@ app.set("view engine", "ejs");
 var socketIO = require("socket.io")(http);
 var socketID = "";
 var users = [];
-const port =process.env.MONGODB_URI || 3000
+const port =process.env.PORT || 3000
 
 //var mainURL = "http://localhost:3000";
 var mainURL = "http://localhost:"+port;
@@ -36,7 +36,7 @@ const cp={
 	useUnifiedTopology:true
 }
 
-mongoClient.connect(url,cp,function(err,name){
+mongoClient.connect(process.env.MONGODB_URI,cp,function(err,name){
 	var database = name.db('gowsi')
 	console.log("Database connected.");
 
